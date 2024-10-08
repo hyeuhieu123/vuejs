@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from "vue-router";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -83,28 +83,6 @@ const router = createRouter({
           /** webpackChunkName:"listProduct" */ "../views/bt8/ProductDetail.vue"
         ),
     },
-    {
-      path: "/admin",
-      name: "user",
-      component: () =>
-        import(/** webpackChunkName:"user" */ "../views/bt6/User.vue"),
-      children: [
-        {
-          path: "/about",
-          name: "about",
-          component: () =>
-            import(/** webpackChunkName:"about" */ "../views/bt6/About.vue"),
-        },
-        {
-          path: "/setting",
-          name: "setting",
-          component: () =>
-            import(
-              /** webpackChunkName:"setting" */ "../views/bt6/Setting.vue"
-            ),
-        },
-      ],
-    },
   ],
 });
 // router.beforeEach((to, from, next) => {
@@ -120,4 +98,4 @@ router.afterEach((to) => {
 
   localStorage.setItem("lastVisitedUrl", to.fullPath);
 });
-export default router
+export default router;
