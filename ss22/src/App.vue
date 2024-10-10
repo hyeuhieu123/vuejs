@@ -14,6 +14,16 @@
     <Excercise6></Excercise6>
     <h1>Product</h1>
     <Excercise7></Excercise7>
+    <div>
+      <select v-model="selectedValue">
+        <option disabled value="">Please Select</option>
+        <option value="a">A</option>
+        <option value="b">B</option>
+        <option value="c">C</option>
+      </select>
+      <span style="padding-left: 5%">Your Choice is: {{ selected }}</span>
+    </div>
+    <h1>{{ selectedValue }}</h1>
   </div>
 </template>
 <script setup>
@@ -24,6 +34,7 @@ import Excercise4 from "./components/Excercise4.vue";
 import Excercise5 from "./components/Excercise5.vue";
 import Excercise6 from "./components/Excercise6.vue";
 import Excercise7 from "./components/Excercise7/Excercise7.vue";
+const selectedValue = ref("");
 
 const users = ref([]);
 const getData = async () => {
